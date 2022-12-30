@@ -1,6 +1,6 @@
 class Run(object):
     def run(self):
-        print("Hello, auto deploy!")
+        print("Hello, test!")
 
 
 if __name__ == '__main__':
