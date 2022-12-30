@@ -13,5 +13,11 @@ pipeline {
         }
       }
     }
+    stage('docker'){
+        steps {
+            sh 'docker build -t data_analysis .'
+            sh 'docker run  data_analysis'
+        }
+    }
   }
 }
