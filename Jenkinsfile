@@ -5,7 +5,7 @@ pipeline {
       steps {
         sh 'pip3 install -r requirements.txt'
         sh "pwd"
-        dir('your-sub-directory') {
+        dir('src') {
             sh "pwd"
         }
         sh "pwd"
