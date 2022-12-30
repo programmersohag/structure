@@ -4,13 +4,14 @@ pipeline {
     stage('build') {
       steps {
         sh 'pip3 install -r requirements.txt'
-        sh "pwd"
-        dir('src') {
-            sh "pwd"
+      }
+    }
+    stage('run') {
+      steps {
+      dir('src') {
             sh 'python3 run.py'
         }
       }
     }
   }
-
 }
