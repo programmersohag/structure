@@ -7,16 +7,10 @@ pipeline {
         sh "pwd"
         dir('src') {
             sh "pwd"
+            sh 'python3 run.py'
         }
-        sh "pwd"
       }
     }
-    stage('run') {
-      steps {
-        sh 'python3 run.py'
-      }
-    }
-
   }
 
 }
