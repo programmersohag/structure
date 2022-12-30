@@ -13,13 +13,13 @@ pipeline {
         }
       }
     }
-    stage('docker'){
-        agent any
-        steps {
-            sh 'pwd'
-            sh 'docker build -t data_analysis .'
-            sh 'docker run  data_analysis'
-        }
-    }
+//     stage('docker'){
+//         agent any
+//         steps {
+//             sh 'pwd'
+//             sh 'docker build -t data_analysis .'
+//             sh 'docker run  data_analysis'
+//         }
+//     }
   }
 }
