@@ -1,5 +1,5 @@
 pipeline {
-  agent any
+  agent none
   stages {
     stage('build') {
       steps {
@@ -14,6 +14,7 @@ pipeline {
       }
     }
     stage('docker'){
+        agent any
         steps {
             sh 'docker build -t data_analysis .'
             sh 'docker run  data_analysis'
