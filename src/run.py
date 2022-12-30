@@ -10,7 +10,7 @@ filename = "../data/Iris.csv"
 class Run(object):
     def run(self):
         X_train, X_test, y_train, y_test = Preprocess.loadData(filename)
-        Train.trainModel(X_train, X_test, y_train, y_test);
+        Train.trainModel(X_train, X_test, y_train, y_test)
         Predict.predictModel(X_test, y_test)
 
 

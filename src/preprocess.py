@@ -6,7 +6,8 @@ import warnings
 
 warnings.filterwarnings('ignore')
 
-class Preprocess():
+
+class Preprocess:
     def loadData(filename):
         print("Hello, world! " + filename)
         # Data Initialising, Importing
