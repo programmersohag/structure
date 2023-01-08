@@ -3,11 +3,13 @@ pipeline {
         docker { image 'python:3' }
     }
   stages {
+
     stage('build') {
       steps {
         sh 'pip3 install -r requirements.txt'
       }
     }
+
     stage('run') {
       steps {
       dir('src') {
@@ -15,14 +17,7 @@ pipeline {
         }
       }
     }
-    stage('docker Initialize'){
-        steps {
-        script{
-            def dockerHome = tool 'docker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-        }
-    }
+
     stage('docker'){
         agent any
         steps {
@@ -31,5 +26,6 @@ pipeline {
             sh 'docker run  data_analysis'
         }
     }
+
   }
 }
