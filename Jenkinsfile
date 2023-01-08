@@ -3,7 +3,7 @@ pipeline {
         docker { image 'python:3' }
     }
     tools {
-    'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
     }
    environment {
     DOCKER_CERT_PATH = credentials('sohag@1254')
@@ -23,8 +23,8 @@ pipeline {
     }
     stage('docker environment version'){
         steps {
-        sh "docker version"
-      }
+            sh "docker version"
+        }
     }
     stage('docker'){
         agent any
