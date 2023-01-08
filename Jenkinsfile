@@ -8,9 +8,8 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'pip3 install -U pip virtualenv'
-        sh 'virtualenv --system-site-packages -p python3 ./venv'
-        sh 'pip3 install --user -r requirements.txt'
+        sh 'chown -R /.local'
+        sh 'pip3 install -r requirements.txt'
       }
     }
 
