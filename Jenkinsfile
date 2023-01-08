@@ -8,7 +8,6 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'virtualenv .venv source .venv/bin/activate'
         sh 'pip3 install --user -r requirements.txt'
       }
     }
