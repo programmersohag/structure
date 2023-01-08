@@ -8,7 +8,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'pip3 install --user -r requirements.txt'
+        sh 'su pip3 install --user -r requirements.txt'
       }
     }
 
