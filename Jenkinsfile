@@ -8,7 +8,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'chown -R root:users /.local'
+        sh 'chown -R root:users /local'
         sh 'pip3 install -r requirements.txt'
       }
     }
