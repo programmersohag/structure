@@ -8,7 +8,9 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'python3 -m venv env source ./env/bin/activate'
+        sh 'pip3 install -U pip virtualenv'
+        sh 'virtualenv --system-site-packages -p python3 ./venv'
+        sh '.\venv\activate'
         sh 'pip3 install --user -r requirements.txt'
       }
     }
