@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip install --trusted-host pypi.python.org -r requirements.txt
+        sh 'pip install -r requirements.txt'
       }
     }
     stage('run') {
