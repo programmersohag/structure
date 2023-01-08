@@ -8,7 +8,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'sudo -H pip install virtualenv'
+        sh '-H pip install virtualenv'
         sh 'pip3 install --user -r requirements.txt'
       }
     }
