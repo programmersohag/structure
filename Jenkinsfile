@@ -21,7 +21,7 @@ pipeline {
         }
       }
     }
-    stage('docker version'){
+    stage('docker environment version'){
         steps {
         sh "docker version"
       }
