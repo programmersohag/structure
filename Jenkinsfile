@@ -2,6 +2,12 @@ pipeline {
     agent {
         docker { image 'python:3' }
     }
+    tools {
+    'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
+    }
+   environment {
+    DOCKER_CERT_PATH = credentials('sohag@1254')
+  }
   stages {
     stage('build') {
       steps {
@@ -15,13 +21,10 @@ pipeline {
         }
       }
     }
-    stage('docker Initialize'){
+    stage('docker version'){
         steps {
-        script{
-            def dockerHome = tool 'myDocker'
-            env.PATH = "${dockerHome}/bin:${env.PATH}"
-            }
-        }
+        sh "docker version"
+      }
     }
     stage('docker'){
         agent any
