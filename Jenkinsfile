@@ -3,7 +3,7 @@ pipeline {
         docker { image 'python:3' }
     }
     tools {
-        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' 'null'
+        'org.jenkinsci.plugins.docker.commons.tools.DockerTool' '18.09'
     }
    environment {
     DOCKER_CERT_PATH = credentials('sohag@1254')
