@@ -8,7 +8,7 @@ pipeline {
 
     stage('build') {
       steps {
-        sh 'pip3 install -r requirements.txt'
+        sh 'pip3 install --user -r requirements.txt'
       }
     }
 
@@ -24,7 +24,7 @@ pipeline {
         agent any
         steps {
             sh 'pwd'
-            sh 'docker build -t data_analysis .'
+            sh 'docker build -t sohag/data_analysis .'
             sh 'docker run  data_analysis'
         }
     }
@@ -34,7 +34,7 @@ pipeline {
       steps {
       	withCredentials([usernamePassword(credentialsId: 'e63d3b35-7931-4278-a344-fd124d875e1a', passwordVariable: 'sohagali', usernameVariable: 'sohag7860')]) {
         	sh "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-            sh 'docker push data_analysis:latest'
+            sh 'docker push sohag/data_analysis:latest'
         }
       }
     }
