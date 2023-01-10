@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'pip3 install -r 777 requirements.txt'
+        sh 'pip3 install -r requirements.txt'
       }
     }
 
