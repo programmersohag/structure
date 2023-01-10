@@ -5,21 +5,6 @@ pipeline {
       }
     }
   stages {
-    stage('build') {
-      steps {
-        sh 'pip3 install -r requirements.txt'
-        sh 'chmod 755 ./local'
-      }
-    }
-
-    stage('run') {
-      steps {
-      dir('src') {
-            sh 'python3 run.py'
-        }
-      }
-    }
-
     stage('docker'){
         agent any
         steps {
