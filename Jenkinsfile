@@ -7,7 +7,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
-        sh 'chmod +x pip3 install -r requirements.txt'
+        sh 'pip3 install -r requirements.txt'
       }
     }
 
