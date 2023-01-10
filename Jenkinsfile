@@ -7,6 +7,7 @@ pipeline {
   stages {
     stage('build') {
       steps {
+        sh 'chmod 755 ./local'
         sh 'pip3 install -r requirements.txt'
       }
     }
