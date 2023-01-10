@@ -23,6 +23,7 @@ pipeline {
     stage('docker'){
         agent any
         steps {
+            sh 'chmod 666 /var/run/docker.sock'
             sh 'pwd'
             sh 'docker build -t sohag/data_analysis .'
             sh 'docker run  data_analysis'
